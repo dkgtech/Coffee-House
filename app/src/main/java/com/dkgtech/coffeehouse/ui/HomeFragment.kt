@@ -8,10 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dkgtech.coffeehouse.R
+import com.dkgtech.coffeehouse.adapter.RecyclerCoffeeAdapter
 import com.dkgtech.coffeehouse.adapter.RecyclerCoffeeCategoryAdapter
 import com.dkgtech.coffeehouse.databinding.FragmentHomeBinding
 import com.dkgtech.coffeehouse.model.CoffeeCategoryModel
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.toObject
 import com.google.firebase.ktx.Firebase
 
 class HomeFragment : Fragment() {
@@ -24,11 +26,13 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         val db = Firebase.firestore
         with(binding) {
+
+//            for categories
+
             val coffeeCategoryModel = ArrayList<CoffeeCategoryModel>()
             db.collection("coffeeCategories").get().addOnSuccessListener {
                 for (doc in it.documents) {
                     coffeeCategoryModel.add(doc.toObject(CoffeeCategoryModel::class.java)!!)
-                    Log.d("TAG", "${it.documents}")
                 }
                 rcViewCategories.layoutManager =
                     LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -36,6 +40,18 @@ class HomeFragment : Fragment() {
                     RecyclerCoffeeCategoryAdapter(requireContext(), coffeeCategoryModel)
             }
 
+
+//            for coffees
+
+            db.collection("coffeeCategories").get().addOnSuccessListener {
+                for (doc in it.documents) {
+                    coffeeCategoryModel.add(doc.toObject(CoffeeCategoryModel::class.java)!!)
+                }
+                rcViewCoffees.layoutManager =
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                rcViewCoffees.adapter =
+                    RecyclerCoffeeAdapter(requireContext(), coffeeCategoryModel)
+            }
         }
 
 
