@@ -27,7 +27,7 @@ class RecyclerCoffeeAdapter(val context: Context, val coffeelist: ArrayList<Coff
             Picasso.get().load(coffeelist[position].catImage).into(imgCoffee)
             txtCoffeeTitle.text = coffeelist[position].catTitle
             txtCoffeeSubTitle.text = coffeelist[position].catSubTitle
-            txtCoffeePrice.append(coffeelist[position].catPrice)
+            txtCoffeePrice.text = coffeelist[position].catPrice
         }
     }
 }

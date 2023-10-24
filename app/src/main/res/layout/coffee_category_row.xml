@@ -9,20 +9,21 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/bgColor"
         app:cardCornerRadius="@dimen/_4sdp"
-        app:cardElevation="@dimen/_4sdp"
-        app:cardUseCompatPadding="true">
+        app:cardUseCompatPadding="true"
+        app:cardElevation="@dimen/_2sdp">
 
         <TextView
             android:textStyle="bold"
+            android:fontFamily="@font/poppins_light"
             android:id="@+id/txtCatTitle"
             android:layout_width="wrap_content"
             android:textAlignment="center"
             android:gravity="center"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_8sdp"
+            android:padding="@dimen/_4sdp"
             android:text="Americano"
             android:textColor="@color/textColor"
-            android:textSize="@dimen/_14ssp" />
+            android:textSize="@dimen/_10ssp" />
 
     </androidx.cardview.widget.CardView>
 

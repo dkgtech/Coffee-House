@@ -23,7 +23,7 @@
             app:cardElevation="@dimen/_4sdp">
 
             <ImageView
-                android:id="@+id/imgCoffee"
+                android:id="@+id/imgBeans"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
@@ -33,7 +33,7 @@
 
 
         <TextView
-            android:id="@+id/txtCoffeeTitle"
+            android:id="@+id/txtBeansTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
@@ -43,7 +43,7 @@
             android:textSize="@dimen/_13ssp" />
 
         <TextView
-            android:id="@+id/txtCoffeeSubTitle"
+            android:id="@+id/txtBeansSubTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_light"
@@ -56,7 +56,7 @@
             android:layout_height="@dimen/_20sdp">
 
             <TextView
-                android:id="@+id/txtCoffeePrice"
+                android:id="@+id/txtBeansPrice"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/_20sdp"
                 android:layout_weight="1"

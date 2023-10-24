@@ -44,6 +44,8 @@ class MainActivity : AppCompatActivity() {
         } else {
             ft.replace(R.id.container, frag)
         }
+        ft.attach(frag)
         ft.commit()
+
     }
 }
