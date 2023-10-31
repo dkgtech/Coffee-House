@@ -15,19 +15,20 @@
         app:layout_constraintBottom_toTopOf="@id/bnView"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <me.ibrahimsn.lib.SmoothBottomBar
         android:id="@+id/bnView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:background="@android:color/transparent"
-        android:backgroundTint="#50000000"
-        app:itemIconTint="@color/btnColor"
-        app:itemTextAppearanceActive="@color/btnColor"
-        app:labelVisibilityMode="unlabeled"
+        android:backgroundTint="@android:color/transparent"
+        app:backgroundColor="@android:color/transparent"
+        app:iconSize="@dimen/_20ssp"
+        app:iconTintActive="@color/btnColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation" />
+        app:menu="@menu/bottom_navigation"
+        app:textColor="@color/btnColor" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,19 +21,23 @@ class MainActivity : AppCompatActivity() {
             fm = supportFragmentManager
 
             loadFragment(HomeFragment(), true)
-            bnView.selectedItemId = R.id.menu_home
+            bnView.setOnItemSelectedListener {
+                when (it) {
+                    0 -> {
+                        loadFragment(HomeFragment(), false)
 
-            bnView.setOnItemSelectedListener { item ->
-                when (item.itemId) {
-                    R.id.menu_home -> loadFragment(HomeFragment(), false)
-                    R.id.menu_cart -> loadFragment(CartFragment(), false)
-                    R.id.menu_favourite -> loadFragment(FavouriteFragment(), false)
-                    R.id.menu_notification -> loadFragment(NotificationFragment(), false)
-
+                    }
+                    1 -> {
+                        loadFragment(CartFragment(), false)
+                    }
+                    2 -> {
+                        loadFragment(FavouriteFragment(), false)
+                    }
+                    else -> {
+                        loadFragment(NotificationFragment(), false)
+                    }
                 }
-                true
             }
-
         }
     }
 

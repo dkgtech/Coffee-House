@@ -58,4 +58,11 @@ dependencies {
 //    Picasso
     implementation("com.squareup.picasso:picasso:2.8")
 
+//    lottie
+    implementation("com.airbnb.android:lottie:6.1.0")
+
+//    bottom navigation
+    implementation ("com.github.ibrahimsn98:SmoothBottomBar:1.7.9")
+
+
 }

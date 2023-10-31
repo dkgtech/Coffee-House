@@ -32,6 +32,8 @@ class HomeFragment : Fragment() {
 
 //            for categories
 
+            animationView.visibility = View.VISIBLE
+
             val coffeeCategoryModel = ArrayList<CoffeeCategoryModel>()
             db.collection("coffeeCategories").get().addOnSuccessListener {
                 for (doc in it.documents) {
@@ -41,6 +43,7 @@ class HomeFragment : Fragment() {
                     LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
                 rcViewCategories.adapter =
                     RecyclerCoffeeCategoryAdapter(requireContext(), coffeeCategoryModel)
+                animationView.visibility = View.GONE
             }
 
 
@@ -54,6 +57,7 @@ class HomeFragment : Fragment() {
                     LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
                 rcViewCoffees.adapter =
                     RecyclerCoffeeAdapter(requireContext(), coffeeCategoryModel)
+                animationView.visibility = View.GONE
             }
 
 
@@ -68,6 +72,7 @@ class HomeFragment : Fragment() {
                     LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
                 binding.rcViewCoffeeBeans.adapter =
                     RecyclerBeansAdapter(requireContext(), beansModel)
+                animationView.visibility = View.GONE
             }
         }
 
